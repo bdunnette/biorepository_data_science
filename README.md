@@ -1,5 +1,7 @@
 # Biorepository Data Science
 
+[![pages-build-deployment](https://github.com/bdunnette/biorepository_data_science/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/bdunnette/biorepository_data_science/actions/workflows/pages/pages-build-deployment)
+
 This cookiecutter creates a simple boilerplate for a Jupyter Book.
 
 ## Usage
