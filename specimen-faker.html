@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Generating fake data for the specimen table &#8212; Biorepository Data Science</title>
+    <title>Generating fake specimen data &#8212; Biorepository Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -130,7 +130,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Generating fake data for the specimen table
+   Generating fake specimen data
   </a>
  </li>
 </ul>
@@ -329,7 +329,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Generating fake data for the specimen table</h1>
+                <h1>Generating fake specimen data</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -341,8 +341,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="generating-fake-data-for-the-specimen-table">
-<h1>Generating fake data for the specimen table<a class="headerlink" href="#generating-fake-data-for-the-specimen-table" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="generating-fake-specimen-data">
+<h1>Generating fake specimen data<a class="headerlink" href="#generating-fake-specimen-data" title="Permalink to this headline">#</a></h1>
+<p>In this notebook, we will generate fake specimen data using the <a class="reference external" href="https://faker.readthedocs.io/en/master/">faker</a> library.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
@@ -363,13 +364,8 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">faker</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fake</span> <span class="o">=</span> <span class="n">faker</span><span class="o">.</span><span class="n">Faker</span><span class="p">()</span>
+
+<span class="n">fake</span> <span class="o">=</span> <span class="n">faker</span><span class="o">.</span><span class="n">Faker</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -469,63 +465,63 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>0</th>
-      <td>94400878</td>
-      <td>45495656</td>
+      <td>89409633</td>
+      <td>71482613</td>
       <td>Urine</td>
-      <td>30144880</td>
-      <td>A07696084</td>
-      <td>500</td>
+      <td>19918051</td>
+      <td>A30612433</td>
+      <td>350</td>
       <td>µL</td>
-      <td>2003-03-16 22:50:29</td>
-      <td>2003-03-21 01:22:29</td>
+      <td>2019-09-10 20:49:33</td>
+      <td>2019-09-17 12:43:33</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>38415371</td>
-      <td>73845249</td>
-      <td>Serum</td>
-      <td>14671630</td>
-      <td>A61187887</td>
-      <td>500</td>
+      <td>35837794</td>
+      <td>32647273</td>
+      <td>Urine</td>
+      <td>81200788</td>
+      <td>A47487673</td>
+      <td>400</td>
       <td>µL</td>
-      <td>2017-12-26 17:52:47</td>
-      <td>2017-12-30 01:00:47</td>
+      <td>2008-09-18 10:58:56</td>
+      <td>2008-09-19 08:04:56</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>19504742</td>
-      <td>40107738</td>
+      <td>56309560</td>
+      <td>40290201</td>
       <td>Blood</td>
-      <td>42486145</td>
-      <td>A72658307</td>
+      <td>57954172</td>
+      <td>A12485161</td>
       <td>350</td>
       <td>µL</td>
-      <td>2022-04-29 12:38:16</td>
-      <td>2022-05-05 20:40:16</td>
+      <td>2012-11-02 08:43:07</td>
+      <td>2012-11-04 10:54:07</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>53708038</td>
-      <td>38109133</td>
+      <td>07912863</td>
+      <td>64935300</td>
       <td>Urine</td>
-      <td>60225313</td>
-      <td>A06543310</td>
-      <td>250</td>
+      <td>93837118</td>
+      <td>A89582046</td>
+      <td>150</td>
       <td>µL</td>
-      <td>2000-10-25 10:30:14</td>
-      <td>2000-10-26 23:49:14</td>
+      <td>2020-10-07 08:52:32</td>
+      <td>2020-10-10 06:44:32</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>85304178</td>
-      <td>98067114</td>
-      <td>Serum</td>
-      <td>08975201</td>
-      <td>A79980517</td>
-      <td>400</td>
+      <td>77936141</td>
+      <td>42933120</td>
+      <td>Blood</td>
+      <td>60672643</td>
+      <td>A85884038</td>
+      <td>500</td>
       <td>µL</td>
-      <td>2006-12-09 08:14:25</td>
-      <td>2006-12-12 15:59:25</td>
+      <td>2004-05-30 04:22:18</td>
+      <td>2004-06-04 20:18:18</td>
     </tr>
     <tr>
       <th>...</th>
@@ -541,63 +537,63 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>995</th>
-      <td>69477089</td>
-      <td>77350183</td>
+      <td>72955178</td>
+      <td>00331296</td>
       <td>Urine</td>
-      <td>21890963</td>
-      <td>A22972422</td>
-      <td>400</td>
+      <td>23485945</td>
+      <td>A63542912</td>
+      <td>500</td>
       <td>µL</td>
-      <td>2000-03-02 16:19:37</td>
-      <td>2000-03-06 19:35:37</td>
+      <td>2018-04-03 18:04:07</td>
+      <td>2018-04-08 05:08:07</td>
     </tr>
     <tr>
       <th>996</th>
-      <td>24301398</td>
-      <td>86846943</td>
-      <td>Urine</td>
-      <td>05607891</td>
-      <td>A79801522</td>
-      <td>150</td>
+      <td>93225397</td>
+      <td>91056658</td>
+      <td>Blood</td>
+      <td>16068018</td>
+      <td>A65849835</td>
+      <td>400</td>
       <td>µL</td>
-      <td>2002-05-01 06:01:23</td>
-      <td>2002-05-02 00:13:23</td>
+      <td>2003-01-01 03:05:37</td>
+      <td>2003-01-04 18:50:37</td>
     </tr>
     <tr>
       <th>997</th>
-      <td>78168961</td>
-      <td>93436328</td>
-      <td>Urine</td>
-      <td>00717571</td>
-      <td>A63349863</td>
+      <td>26314051</td>
+      <td>24395168</td>
+      <td>Blood</td>
+      <td>56037739</td>
+      <td>A46773272</td>
       <td>150</td>
       <td>µL</td>
-      <td>2010-09-29 14:09:45</td>
-      <td>2010-10-05 00:58:45</td>
+      <td>2015-10-22 12:54:43</td>
+      <td>2015-10-26 22:44:43</td>
     </tr>
     <tr>
       <th>998</th>
-      <td>85295827</td>
-      <td>98149476</td>
-      <td>Serum</td>
-      <td>22188205</td>
-      <td>A52715471</td>
-      <td>500</td>
+      <td>54141049</td>
+      <td>16621916</td>
+      <td>Blood</td>
+      <td>28485322</td>
+      <td>A84808417</td>
+      <td>0</td>
       <td>µL</td>
-      <td>2014-02-02 13:02:38</td>
-      <td>2014-02-09 12:07:38</td>
+      <td>2014-03-25 21:23:54</td>
+      <td>2014-03-28 07:31:54</td>
     </tr>
     <tr>
       <th>999</th>
-      <td>78574236</td>
-      <td>28256762</td>
-      <td>Serum</td>
-      <td>12689125</td>
-      <td>A85987852</td>
-      <td>0</td>
+      <td>05378708</td>
+      <td>26325170</td>
+      <td>Urine</td>
+      <td>48402187</td>
+      <td>A90733123</td>
+      <td>150</td>
       <td>µL</td>
-      <td>2008-01-24 06:54:12</td>
-      <td>2008-01-25 00:03:12</td>
+      <td>2000-01-27 15:34:57</td>
+      <td>2000-01-30 18:04:57</td>
     </tr>
   </tbody>
 </table>
