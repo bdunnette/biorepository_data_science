@@ -383,14 +383,6 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MIN_DELAY_HOURS</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">MAX_DELAY_HOURS</span> <span class="o">=</span> <span class="mi">168</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DATASET_SIZE</span> <span class="o">=</span> <span class="mi">1000</span>
 </pre></div>
 </div>
@@ -405,6 +397,10 @@ title="Print to PDF"
         <span class="s2">&quot;SAMPLETYPE&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">SAMPLETYPES</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">DATASET_SIZE</span><span class="p">)],</span>
         <span class="s2">&quot;CONTAINERID&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">fake</span><span class="o">.</span><span class="n">ean8</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">DATASET_SIZE</span><span class="p">)],</span>
         <span class="s2">&quot;ACCESSION&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span> <span class="o">+</span> <span class="n">fake</span><span class="o">.</span><span class="n">ean8</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">DATASET_SIZE</span><span class="p">)],</span>
+        <span class="s2">&quot;AMOUNTLEFT&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">DATASET_SIZE</span><span class="p">)</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;AMOUNT_UNITS&quot;</span><span class="p">:</span> <span class="s2">&quot;µL&quot;</span><span class="p">,</span>
         <span class="s2">&quot;DATE_COLLECTED&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">fake</span><span class="o">.</span><span class="n">date_time_this_century</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">DATASET_SIZE</span><span class="p">)],</span>
     <span class="p">}</span>
 <span class="p">)</span>
@@ -414,8 +410,18 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MIN_DELAY_HOURS</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">MAX_DELAY_HOURS</span> <span class="o">=</span> <span class="mi">168</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add date received that is between 4 and 168 hours (one week) after date collected</span>
-<span class="n">specimens</span><span class="p">[</span><span class="s2">&quot;RECEIVE_DELAY_MINUTES&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">MIN_DELAY_HOURS</span><span class="o">*</span><span class="mi">60</span><span class="p">,</span> <span class="n">MAX_DELAY_HOURS</span><span class="o">*</span><span class="mi">60</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">DATASET_SIZE</span><span class="p">)</span>
+<span class="n">specimens</span><span class="p">[</span><span class="s2">&quot;RECEIVE_DELAY_MINUTES&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span>
+    <span class="n">MIN_DELAY_HOURS</span> <span class="o">*</span> <span class="mi">60</span><span class="p">,</span> <span class="n">MAX_DELAY_HOURS</span> <span class="o">*</span> <span class="mi">60</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">DATASET_SIZE</span>
+<span class="p">)</span>
 <span class="n">specimens</span><span class="p">[</span><span class="s2">&quot;DATE_RECEIVED&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">specimens</span><span class="p">[</span><span class="s2">&quot;DATE_COLLECTED&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span>
     <span class="n">specimens</span><span class="p">[</span><span class="s2">&quot;RECEIVE_DELAY_MINUTES&quot;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;m&quot;</span>
 <span class="p">)</span>
@@ -454,6 +460,8 @@ title="Print to PDF"
       <th>SAMPLETYPE</th>
       <th>CONTAINERID</th>
       <th>ACCESSION</th>
+      <th>AMOUNTLEFT</th>
+      <th>AMOUNT_UNITS</th>
       <th>DATE_COLLECTED</th>
       <th>DATE_RECEIVED</th>
     </tr>
@@ -461,53 +469,63 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>0</th>
-      <td>94010534</td>
-      <td>68211769</td>
-      <td>Urine</td>
-      <td>40165127</td>
-      <td>A47612686</td>
-      <td>2005-01-05 11:10:52</td>
-      <td>2005-01-06 19:30:52</td>
+      <td>86973403</td>
+      <td>27847282</td>
+      <td>Serum</td>
+      <td>20199821</td>
+      <td>A63916744</td>
+      <td>350</td>
+      <td>µL</td>
+      <td>2010-04-25 01:27:59</td>
+      <td>2010-05-01 07:55:59</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>19769097</td>
-      <td>25291094</td>
-      <td>Serum</td>
-      <td>57814544</td>
-      <td>A71070667</td>
-      <td>2016-10-24 04:54:07</td>
-      <td>2016-10-30 11:23:07</td>
+      <td>22179845</td>
+      <td>00077927</td>
+      <td>Blood</td>
+      <td>77091680</td>
+      <td>A10293409</td>
+      <td>500</td>
+      <td>µL</td>
+      <td>2020-11-16 11:11:48</td>
+      <td>2020-11-21 16:55:48</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>06288655</td>
-      <td>92267787</td>
-      <td>Blood</td>
-      <td>52542084</td>
-      <td>A91792716</td>
-      <td>2017-08-04 20:11:12</td>
-      <td>2017-08-09 11:30:12</td>
+      <td>33229508</td>
+      <td>60756060</td>
+      <td>Serum</td>
+      <td>25067378</td>
+      <td>A05896110</td>
+      <td>500</td>
+      <td>µL</td>
+      <td>2020-04-30 11:26:54</td>
+      <td>2020-05-06 13:25:54</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>00475112</td>
-      <td>66639770</td>
+      <td>45079702</td>
+      <td>30696303</td>
       <td>Blood</td>
-      <td>39887986</td>
-      <td>A13710484</td>
-      <td>2021-10-16 20:35:32</td>
-      <td>2021-10-17 22:01:32</td>
+      <td>95866703</td>
+      <td>A31980852</td>
+      <td>250</td>
+      <td>µL</td>
+      <td>2021-02-11 17:28:58</td>
+      <td>2021-02-18 16:45:58</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>73158127</td>
-      <td>00199476</td>
-      <td>Blood</td>
-      <td>29727490</td>
-      <td>A98520732</td>
-      <td>2008-04-03 00:11:55</td>
-      <td>2008-04-07 01:27:55</td>
+      <td>87414097</td>
+      <td>56152883</td>
+      <td>Serum</td>
+      <td>39197528</td>
+      <td>A02108148</td>
+      <td>350</td>
+      <td>µL</td>
+      <td>2009-07-21 17:16:10</td>
+      <td>2009-07-24 06:28:10</td>
     </tr>
     <tr>
       <th>...</th>
@@ -518,60 +536,72 @@ title="Print to PDF"
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>995</th>
-      <td>78672864</td>
-      <td>50390588</td>
-      <td>Serum</td>
-      <td>48034487</td>
-      <td>A87011739</td>
-      <td>2012-08-04 11:12:31</td>
-      <td>2012-08-06 17:45:31</td>
+      <td>21682537</td>
+      <td>57732572</td>
+      <td>Urine</td>
+      <td>26546865</td>
+      <td>A62699914</td>
+      <td>150</td>
+      <td>µL</td>
+      <td>2014-05-18 10:17:07</td>
+      <td>2014-05-23 09:53:07</td>
     </tr>
     <tr>
       <th>996</th>
-      <td>50559152</td>
-      <td>14219795</td>
-      <td>Blood</td>
-      <td>68737085</td>
-      <td>A12405091</td>
-      <td>2020-02-04 12:37:15</td>
-      <td>2020-02-10 06:21:15</td>
+      <td>19670683</td>
+      <td>53917195</td>
+      <td>Serum</td>
+      <td>28688723</td>
+      <td>A34596920</td>
+      <td>150</td>
+      <td>µL</td>
+      <td>2022-05-15 11:30:18</td>
+      <td>2022-05-21 15:24:18</td>
     </tr>
     <tr>
       <th>997</th>
-      <td>24136068</td>
-      <td>73789123</td>
-      <td>Blood</td>
-      <td>98247653</td>
-      <td>A05702862</td>
-      <td>2019-10-10 22:33:39</td>
-      <td>2019-10-11 12:27:39</td>
+      <td>19887371</td>
+      <td>13074050</td>
+      <td>Urine</td>
+      <td>62518291</td>
+      <td>A24085816</td>
+      <td>350</td>
+      <td>µL</td>
+      <td>2020-01-19 16:10:18</td>
+      <td>2020-01-25 09:19:18</td>
     </tr>
     <tr>
       <th>998</th>
-      <td>74527687</td>
-      <td>97938088</td>
+      <td>37080488</td>
+      <td>39605214</td>
       <td>Blood</td>
-      <td>77140050</td>
-      <td>A76143250</td>
-      <td>2015-09-08 09:43:14</td>
-      <td>2015-09-11 15:30:14</td>
+      <td>87596014</td>
+      <td>A05255887</td>
+      <td>0</td>
+      <td>µL</td>
+      <td>2005-12-30 15:07:37</td>
+      <td>2005-12-31 18:31:37</td>
     </tr>
     <tr>
       <th>999</th>
-      <td>22958303</td>
-      <td>11838111</td>
-      <td>Blood</td>
-      <td>39296078</td>
-      <td>A36660216</td>
-      <td>2021-04-29 20:48:55</td>
-      <td>2021-05-01 00:53:55</td>
+      <td>08764379</td>
+      <td>94036596</td>
+      <td>Urine</td>
+      <td>48364034</td>
+      <td>A36778898</td>
+      <td>500</td>
+      <td>µL</td>
+      <td>2015-08-27 19:00:04</td>
+      <td>2015-09-03 08:57:04</td>
     </tr>
   </tbody>
 </table>
-<p>1000 rows × 7 columns</p>
+<p>1000 rows × 9 columns</p>
 </div></div></div>
 </div>
 </section>
